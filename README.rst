@@ -8,6 +8,8 @@ snips-skill-maths
 Installation
 ------------
 
+The fastest way to get going is to use the prebuilt assistant and Snipsfile at  https://github.com/syntithenai/snips_skill_maths
+
 Usage
 -----
 Snips Skills Manager
@@ -15,8 +17,29 @@ Snips Skills Manager
 
 It is recommended that you use this skill with the `Snips Skills Manager <https://github.com/snipsco/snipsskills>`_. Simply add the following section to your `Snipsfile <https://github.com/snipsco/snipsskills/wiki/The-Snipsfile>`_:
 
+    pip: snips-skill-maths
+    package_name: arithmeticskill
+    class_name: ArithmeticSkill
+    requires_tts: True
+    intents:
+      - intent: BasicMaths
+        action: |
+          {%
+          skill.solve_and_say(intent.numberA,intent.numberB,intent.mathsOperator)
+          %}
+
+
+
+
 Standalone usage
 ^^^^^^^^^^^^^^^^
+
+import ArithmeticSkill from arithmeticskill.arithmeticskill
+
+calculator = ArithmeticSkill()
+calculator.solve(2,'plus',3)
+
+
 
 Contributing
 ------------

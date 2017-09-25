@@ -32,8 +32,6 @@ class ArithmeticSkill:
         print(result)
         if result is not None:
             if self.tts_service:
-                print('have TTS')
-                print("{} {} {} is {}".format(
-                    numberA, operator, numberB, result))
-                self.tts_service.speak("{} {} {} is {}".format(
-                    numberA, operator, numberB, result))
+                print('have TTdS')
+                print("{} {} {} is {}".format(numberA, operator, numberB, result))
+                self.tts_service.speak("{} {} {} is {}".format(numberA, operator, numberB, result))
